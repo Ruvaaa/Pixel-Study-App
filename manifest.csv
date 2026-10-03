@@ -1,0 +1,88 @@
+original_file,new_path,description
+1.png,01_main_room/reference/ref_master_sunset_typing__orig01.png,"Original master reference: pink room, sunset window, typing"
+2.png,02_alt_night_room_pink_sweater/altnight_writing_01__orig02.png,"Different room/character: lamp, cat on bed, writing in notebook"
+3.png,02_alt_night_room_pink_sweater/altnight_writing_02__orig03.png,"Different room/character: lamp, cat on bed, writing in notebook"
+4.png,02_alt_night_room_pink_sweater/altnight_writing_03__orig04.png,"Different room/character: lamp, cat on bed, writing in notebook"
+5.png,02_alt_night_room_pink_sweater/altnight_writing_04__orig05.png,"Different room/character: lamp, cat on bed, writing in notebook"
+6.png,02_alt_night_room_pink_sweater/altnight_writing_05__orig06.png,"Different room/character: lamp, cat on bed, writing in notebook"
+7.png,03_alt_purple_room_stretch/altpurple_stretch_01_typing__orig07.png,"Different room/character: stretch animation, typing"
+8.png,03_alt_purple_room_stretch/altpurple_stretch_02_fists_up__orig08.png,"Different room/character: stretch animation, fists raised"
+9.png,03_alt_purple_room_stretch/altpurple_stretch_03_arms_up__orig09.png,"Different room/character: stretch animation, arms up"
+10.png,03_alt_purple_room_stretch/altpurple_stretch_04_full_stretch__orig10.png,"Different room/character: stretch animation, full stretch overhead"
+11.png,03_alt_purple_room_stretch/altpurple_stretch_05_lowering__orig11.png,"Different room/character: stretch animation, arms coming down"
+12.png,03_alt_purple_room_stretch/altpurple_stretch_06_typing_end__orig12.png,"Different room/character: stretch animation, back to typing"
+13.png,02_alt_night_room_pink_sweater/altnight_writing_rain_window__orig13.png,"Same set, rain on window"
+14.png,04_alt_empty_room_window_cycle/emptyroom_01_dusk_pink_purple__orig14.png,"Empty room (no character); window: dusk sky, pink/purple"
+15.png,04_alt_empty_room_window_cycle/emptyroom_02_night_crescent__orig15.png,"Empty room (no character); window: night, crescent moon"
+16.png,04_alt_empty_room_window_cycle/emptyroom_03_night_full_moon_pale__orig16.png,"Empty room (no character); window: night, pale full moon"
+17.png,04_alt_empty_room_window_cycle/emptyroom_04_storm_lightning__orig17.png,Empty room (no character); window: stormy sky with lightning
+18.png,04_alt_empty_room_window_cycle/emptyroom_05_night_crescent_b__orig18.png,"Empty room (no character); window: night, crescent moon"
+19.png,04_alt_empty_room_window_cycle/emptyroom_06_lights_off_laptop_glow__orig19.png,"Empty room (no character); window: dark room, laptop glowing"
+20.png,04_alt_empty_room_window_cycle/emptyroom_07_sunset_purple__orig20.png,"Empty room (no character); window: sunset, purple sky"
+21.png,04_alt_empty_room_window_cycle/emptyroom_08_night_full_moon_bright__orig21.png,"Empty room (no character); window: night, bright full moon"
+22.png,04_alt_empty_room_window_cycle/emptyroom_09_night_moon_clouds__orig22.png,"Empty room (no character); window: night, moon behind clouds"
+23.png,04_alt_empty_room_window_cycle/emptyroom_10_night_moon_dim__orig23.png,"Empty room (no character); window: night, dim moon"
+24.png,05_alt_reading_characters/altread_01_bun_black_top_bed__orig24.png,"Different character reading book, purple room, bed on left"
+25.png,05_alt_reading_characters/altread_02_black_top_desk__orig25.png,"Different character at desk with laptop, pink sneakers"
+26.png,05_alt_reading_characters/altread_03_hoodie_backpack__orig26.png,"Different character in dark hoodie reading, backpack on floor"
+27.png,05_alt_reading_characters/altread_04_purple_hoodie__orig27.png,"Different character in purple hoodie, reading pink book"
+28.png,01_main_room/typing/sunset/typing_sunset_01__orig28.png,"Seated, laptop open, typing; sunset window"
+29.png,01_main_room/typing/day/typing_day_01__orig29.png,"Seated, laptop open, typing; blue-sky window"
+30.png,01_main_room/typing/sunset/typing_sunset_02__orig30.png,"Seated, laptop open, typing; sunset window"
+31.png,01_main_room/reading/reading_sunset_01__orig31.png,Holding an open book in front of laptop; sunset
+32.png,01_main_room/reading/reading_sunset_02__orig32.png,Holding an open book in front of laptop; sunset
+33.png,01_main_room/reading/reading_sunset_03__orig33.png,Holding an open book in front of laptop; sunset
+34.png,01_main_room/typing/night/typing_night_01__orig34.png,"Seated, typing; night window"
+35.png,01_main_room/typing/sunset/typing_sunset_03__orig35.png,"Seated, laptop open, typing; sunset window"
+36.png,01_main_room/typing/sunset/typing_sunset_04__orig36.png,"Seated, laptop open, typing; sunset window"
+37.png,01_main_room/typing/sunset/typing_sunset_05__orig37.png,"Seated, laptop open, typing; sunset window"
+38.png,01_main_room/typing/sunset/typing_sunset_06__orig38.png,"Seated, laptop open, typing; sunset window"
+39.png,01_main_room/typing/sunset/typing_sunset_07__orig39.png,"Seated, laptop open, typing; sunset window"
+40.png,01_main_room/typing/sunset/typing_sunset_08__orig40.png,"Seated, laptop open, typing; sunset window"
+41.png,01_main_room/typing/sunset/typing_sunset_09__orig41.png,"Seated, laptop open, typing; sunset window"
+42.png,01_main_room/typing/sunset/typing_sunset_10__orig42.png,"Seated, laptop open, typing; sunset window"
+43.png,01_main_room/typing/night/typing_night_02__orig43.png,"Seated, typing; night window"
+44.png,01_main_room/typing/sunset/typing_sunset_11__orig44.png,"Seated, laptop open, typing; sunset window"
+45.png,01_main_room/typing/day/typing_day_02__orig45.png,"Seated, laptop open, typing; blue-sky window"
+46.png,01_main_room/typing/sunset/typing_sunset_12__orig46.png,"Seated, laptop open, typing; sunset window"
+47.png,01_main_room/typing/night/typing_night_screenglow_01__orig47.png,"Seated, typing; night window, laptop screen glowing"
+48.png,01_main_room/typing/night/typing_night_03__orig48.png,"Seated, typing; night window"
+49.png,01_main_room/typing/sunset/typing_sunset_13__orig49.png,"Seated, laptop open, typing; sunset window"
+50.png,01_main_room/typing/night/typing_night_04__orig50.png,"Seated, typing; night window"
+51.png,01_main_room/typing/sunset/typing_sunset_14__orig51.png,"Seated, laptop open, typing; sunset window"
+52.png,01_main_room/laptop/laptop_open_screen_on_day__orig52.png,"Laptop open, lavender screen lit; day"
+53.png,01_main_room/laptop/laptop_open_screen_off_day__orig53.png,"Laptop open, screen dark; day"
+54.png,07_overlays_study_time_poster/overlay_study_time_alarm_poster_day__orig54.png,"Main room with 'STUDY TIME' poster covering left side (alarm clock), laptop lit"
+55.png,01_main_room/typing/day/typing_day_03__orig55.png,"Seated, laptop open, typing; blue-sky window"
+56.png,07_overlays_study_time_poster/overlay_study_time_heart_poster_day__orig56.png,Main room with 'STUDY TIME' poster covering left side (heart)
+57.png,01_main_room/typing/day/typing_day_04__orig57.png,"Seated, laptop open, typing; blue-sky window"
+58.png,01_main_room/laptop/laptop_closed_night__orig58.png,Laptop fully closed on desk; night
+59.png,01_main_room/typing/sunset/typing_sunset_15__orig59.png,"Seated, laptop open, typing; sunset window"
+60.png,01_main_room/laptop/laptop_lid_nearly_closed_night_b__orig60.png,Lid almost closed (slightly different angle); night
+61.png,01_main_room/laptop/laptop_lid_nearly_closed_night_a__orig61.png,Lid almost closed; night
+62.png,01_main_room/laptop/laptop_lid_half_open_sunset__orig62.png,Lid raised/lowered mid-motion; sunset
+63.png,01_main_room/typing/sunset/typing_sunset_16__orig63.png,"Seated, laptop open, typing; sunset window"
+64.png,01_main_room/sit_stand/sitstand_standing_hand_on_chair__orig64.png,"Standing, hand on chair back; sunset"
+65.png,01_main_room/sit_stand/sitstand_seated_turning_rising__orig65.png,"Seated, hand on desk edge, turning/rising; sunset"
+66.png,01_main_room/sit_stand/sitstand_seated_chair_pushed_back__orig66.png,"Seated, chair slightly out; sunset"
+67.png,01_main_room/typing/dusk/typing_dusk_01__orig67.png,"Seated, typing; purple dusk window with moon"
+68.png,01_main_room/typing/sunset/typing_sunset_17__orig68.png,"Seated, laptop open, typing; sunset window"
+69.png,01_main_room/typing/sunset/typing_sunset_18__orig69.png,"Seated, laptop open, typing; sunset window"
+70.png,01_main_room/walking/walk_approach_chair__orig70.png,Walking up to the chair; day
+71.png,01_main_room/sit_stand/sitstand_standing_at_desk_04__orig71.png,Standing in front of chair/desk; day
+72.png,01_main_room/sit_stand/sitstand_standing_at_desk_03__orig72.png,Standing in front of chair/desk; day
+73.png,01_main_room/sit_stand/sitstand_standing_at_desk_02__orig73.png,Standing in front of chair/desk; day
+74.png,01_main_room/sit_stand/sitstand_standing_at_desk_01__orig74.png,Standing in front of chair/desk; day
+75.png,01_main_room/sit_stand/sitstand_lowering_into_chair__orig75.png,Lowering into the chair; day
+76.png,01_main_room/weather/weather_overcast_typing__orig76.png,Typing; grey overcast sky
+77.png,01_main_room/weather/weather_rain_typing__orig77.png,"Typing; rain, dimmed room"
+78.png,01_main_room/weather/weather_lightning_typing__orig78.png,"Typing; lightning, dimmed room"
+79.png,01_main_room/walking/walk_cycle_01__orig79.png,Walk cycle toward desk; day
+80.png,01_main_room/walking/walk_cycle_02__orig80.png,Walk cycle toward desk; day
+81.png,01_main_room/walking/walk_cycle_03__orig81.png,Walk cycle toward desk; day
+82.png,01_main_room/walking/walk_cycle_04__orig82.png,Walk cycle toward desk; day
+83.png,01_main_room/walking/walk_cycle_05__orig83.png,Walk cycle toward desk; day
+84.png,01_main_room/walking/walk_cycle_06__orig84.png,Walk cycle toward desk; day
+85.png,06_props_spritesheet/props_spritesheet__orig85.png,"Sprite sheet: rain, clouds, lightning, curtains, plants, mugs, lamps, laptops, books, moons, sparkles, light shafts"
+86.png,01_main_room/typing/day/typing_day_05__orig86.png,"Seated, laptop open, typing; blue-sky window"
+87.png,01_main_room/typing/night/typing_night_screenglow_02__orig87.png,"Seated, typing; night window, laptop screen glowing"
