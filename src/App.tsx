@@ -8,6 +8,12 @@ import {
   allSceneSources,
 } from "./frames";
 
+import {
+  studyMessages,
+  pausedMessages,
+  MESSAGE_INTERVAL_MS,
+} from "./messages";
+
 import "./App.css";
 
 type Course = {
@@ -42,6 +48,9 @@ type DurationOption = {
   label: string;
   seconds: number;
 };
+
+// Name shown in the dashboard greeting.
+const USER_NAME = "Ruva";
 
 const initialCourses: Course[] = [
   {
@@ -165,6 +174,10 @@ function App() {
 
   const [sessionStarted, setSessionStarted] =
     useState(false);
+
+  // Which motivational message is showing on the study page
+  const [messageIndex, setMessageIndex] =
+    useState(0);
 
   const [customHours, setCustomHours] =
     useState("");
@@ -489,6 +502,29 @@ function App() {
   ]);
 
   // ==================================================
+  // ROTATING STUDY MESSAGES
+  // ==================================================
+
+  useEffect(() => {
+    if (
+      companionState !== "studying" &&
+      companionState !== "paused"
+    ) {
+      return;
+    }
+
+    const rotation = setInterval(() => {
+      setMessageIndex(
+        (current) => current + 1,
+      );
+    }, MESSAGE_INTERVAL_MS);
+
+    return () => {
+      clearInterval(rotation);
+    };
+  }, [companionState]);
+
+  // ==================================================
   // AUTOMATIC COMPLETION
   // ==================================================
 
@@ -603,6 +639,12 @@ function App() {
 
     setShowDurationPicker(false);
 
+    setMessageIndex(
+      Math.floor(
+        Math.random() * studyMessages.length,
+      ),
+    );
+
     setCompanionState("opening");
 
     openingTimeoutRef.current = setTimeout(() => {
@@ -622,6 +664,12 @@ function App() {
       return;
     }
 
+    setMessageIndex(
+      Math.floor(
+        Math.random() * pausedMessages.length,
+      ),
+    );
+
     setCompanionState("paused");
   }
 
@@ -631,6 +679,12 @@ function App() {
     ) {
       return;
     }
+
+    setMessageIndex(
+      Math.floor(
+        Math.random() * studyMessages.length,
+      ),
+    );
 
     setCompanionState("studying");
   }
@@ -798,9 +852,15 @@ function App() {
   function exitSession() {
     /*
      * This is intentionally separate from resetSession().
-     * It clears both the temporary session state and
-     * the course locked to the active session.
+     * It saves the time studied so far (so it still counts
+     * towards your totals and streak), then clears both the
+     * temporary session state and the course locked to the
+     * active session.
      */
+
+    if (sessionStarted && elapsedStudySeconds >= 1) {
+      saveSession(elapsedStudySeconds);
+    }
 
     resetSession();
 
@@ -911,6 +971,24 @@ function App() {
       today,
     );
 
+    const keyOf = (date: Date) =>
+      [
+        date.getFullYear(),
+        date.getMonth(),
+        date.getDate(),
+      ].join("-");
+
+    /*
+     * If you haven't studied yet today, the streak is still
+     * alive as long as you studied yesterday, so start
+     * counting from yesterday instead of showing 0.
+     */
+    if (!studiedDates.has(keyOf(currentDate))) {
+      currentDate.setDate(
+        currentDate.getDate() - 1,
+      );
+    }
+
     while (true) {
       const dateKey = [
         currentDate.getFullYear(),
@@ -1005,6 +1083,32 @@ function App() {
     return formatDuration(
       totalSeconds,
     );
+  }
+
+  // ==================================================
+  // GREETING
+  // ==================================================
+
+  function getGreetingMessage() {
+    if (sessions.length === 0) {
+      return "Pick a course and start your first session.";
+    }
+
+    const streak = getStudyStreak();
+
+    const studiedToday = sessions.some(
+      (session) => isToday(session.date),
+    );
+
+    if (streak > 0 && studiedToday) {
+      return `🔥 ${streak}-day streak. Keep it going!`;
+    }
+
+    if (streak > 0) {
+      return `Study today to keep your ${streak}-day streak!`;
+    }
+
+    return "Let's start a new streak today!";
   }
 
   // ==================================================
@@ -1243,7 +1347,7 @@ function App() {
   }
 
   // ==================================================
-  // ACTIVE STUDY SESSION
+  // ACTIVE STUDY SESSION (full-screen scene + overlay)
   // ==================================================
 
   if (
@@ -1253,10 +1357,28 @@ function App() {
     const isPaused =
       companionState === "paused";
 
+    const messageList = isPaused
+      ? pausedMessages
+      : studyMessages;
+
+    const currentMessage = messageList[
+      messageIndex % messageList.length
+    ].replace("{name}", USER_NAME);
+
     return (
-      <main className="study-session-page">
-        <header className="study-session-header">
-          <div>
+      <main className="scene-page">
+        <img
+          className="scene-fullscreen"
+          src={
+            isPaused
+              ? scenes.paused
+              : scenes.studying
+          }
+          alt=""
+        />
+
+        <header className="study-overlay-header">
+          <div className="study-overlay-title">
             <span className="eyebrow">
               ✦{" "}
               {activeCourse?.code ??
@@ -1278,59 +1400,41 @@ function App() {
           </button>
         </header>
 
-        <section className="active-session-card has-scene">
-          <div className="scene-box">
-            <img
-              className="scene-frame"
-              src={
-                isPaused
-                  ? scenes.paused
-                  : scenes.studying
-              }
-              alt=""
-            />
-          </div>
+        <div className="study-overlay-bottom">
+          <p
+            key={`${isPaused}-${messageIndex}`}
+            className="study-message"
+          >
+            {currentMessage}
+          </p>
 
-          <div className="active-session-content">
-            <span className="eyebrow">
-              {isPaused
-                ? "PAUSED"
-                : "FOCUS TIME"}
-            </span>
+          <section className="study-overlay-panel">
+            <div className="study-overlay-time">
+              <span className="eyebrow">
+                {isPaused
+                  ? "PAUSED"
+                  : "FOCUS TIME"}
+              </span>
 
-            <div className="timer">
-              {formatTimer(
-                remainingSeconds,
-              )}
+              <div className="timer">
+                {formatTimer(
+                  remainingSeconds,
+                )}
+              </div>
             </div>
-
-            <p>
-              {isPaused
-                ? "Take a short break. Resume when you're ready."
-                : `Studying ${
-                    activeCourse?.code ??
-                    ""
-                  }`}
-            </p>
 
             <div className="session-actions">
               {isPaused ? (
                 <button
                   type="button"
-                  className="start-button"
-                  onClick={
-                    resumeStudying
-                  }
+                  onClick={resumeStudying}
                 >
                   Resume →
                 </button>
               ) : (
                 <button
                   type="button"
-                  className="start-button"
-                  onClick={
-                    pauseStudying
-                  }
+                  onClick={pauseStudying}
                 >
                   Pause
                 </button>
@@ -1338,16 +1442,13 @@ function App() {
 
               <button
                 type="button"
-                className="finish-button"
-                onClick={
-                  finishStudying
-                }
+                onClick={finishStudying}
               >
                 Finish session
               </button>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </main>
     );
   }
@@ -1492,8 +1593,14 @@ function App() {
           </span>
 
           <h1>
-            Ready to study?
+            {sessions.length > 0
+              ? `Welcome back, ${USER_NAME}!`
+              : `Welcome, ${USER_NAME}!`}
           </h1>
+
+          <p className="dashboard-greeting">
+            {getGreetingMessage()}
+          </p>
         </div>
 
         <button

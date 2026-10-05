@@ -13,8 +13,8 @@
     "windows": [
       {
         "title": "Pixel Study",
-        "width": 600,
-        "height": 570,
+        "width": 640,
+        "height": 610,
         "minWidth": 380,
         "minHeight": 380,
         "resizable": false
